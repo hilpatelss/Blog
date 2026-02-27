@@ -1,0 +1,27 @@
+{% if request.user.is_authenticated %}
+  <nav class="navbar bg-dark border-bottom border-body" data-bs-theme="dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="{% url 'home' %}">home</a>
+      <form class="d-flex" role="search">
+        <a href="{% url 'blog' %}"><button type="button" class="btn btn-success mx-1">New Blog</button></a>
+        <a href="{% url 'signout' %}"><button type="button" class="btn btn-success mx-1">Sign Out</button></a>
+      </form>
+    </div>
+  </nav>
+  <script>
+    alert('{{mesage}}')
+  </script>
+{% else %}
+  <nav class="navbar bg-dark border-bottom border-body" data-bs-theme="dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="{% url 'home' %}">home</a>
+      <form class="d-flex" role="search">
+        <a href="{% url 'signin' %}"><button type="button" class="btn btn-primary mx-1">Sign In</button></a>
+        <a href="{% url 'signup' %}"><button type="button" class="btn btn-success mx-1">Sign Up</button></a>
+      </form>
+    </div>
+  </nav>
+  <script>
+    alert('{{mesage}}')
+  </script>
+{% endif %}
